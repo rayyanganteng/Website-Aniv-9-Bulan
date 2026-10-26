@@ -72,7 +72,7 @@
       background: var(--pink);
     }
 
-    /* Hero Section */
+    /* Hero Section dengan Animasi Bunga Lily di Background */
     .hero {
       min-height: 90vh;
       display: grid;
@@ -88,22 +88,35 @@
 
     .hero::before,
     .hero::after {
-      content: "♡";
+      content: "🌸"; /* Simbol/Animasi Bunga Lily di Background */
       position: absolute;
       font-family: Georgia, serif;
-      color: rgba(200, 79, 117, 0.09);
-      font-size: clamp(13rem, 35vw, 27rem);
+      color: rgba(200, 79, 117, 0.12);
+      font-size: clamp(8rem, 20vw, 16rem);
       line-height: 1;
+      pointer-events: none;
     }
 
     .hero::before {
-      left: -5%;
-      top: -7%;
+      left: -3%;
+      top: 5%;
+      animation: bloomLeft 4s ease-in-out infinite alternate;
     }
 
     .hero::after {
-      right: -4%;
-      bottom: -12%;
+      right: -3%;
+      bottom: 5%;
+      animation: bloomRight 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes bloomLeft {
+      0% { transform: scale(0.9) rotate(-10deg); opacity: 0.08; }
+      100% { transform: scale(1.1) rotate(5deg); opacity: 0.18; }
+    }
+
+    @keyframes bloomRight {
+      0% { transform: scale(1.1) rotate(10deg); opacity: 0.08; }
+      100% { transform: scale(0.9) rotate(-5deg); opacity: 0.18; }
     }
 
     .hero-content {
@@ -598,14 +611,14 @@
   <!-- Hero Section -->
   <header class="hero">
     <div class="hero-content">
-      <div class="eyebrow">a tiny website made with love ♡</div>
+      <div class="eyebrow">a tiny website made with love 🌸</div>
       <h1>Rayyan <em>&amp;</em><br>Vindi</h1>
       <p class="intro">
         Happy 9 Months Anniversary, Sayang! Dari tempat PKL, jadi dua orang yang ternyata satu frekuensi.
         Siapa sangka cerita kecil ini bisa jadi seberarti ini? 🤍🌸
       </p>
       <button class="btn" onclick="document.querySelector('#cerita').scrollIntoView({behavior:'smooth'}); lilyPetals(15);">
-        Buka hadiah kecil ini 🤍
+        Buka hadiah kecil ini 🌸
       </button>
       <p style="font-size:0.88rem; color:var(--muted); margin-top:18px;">23 Januari 2026 · cerita kita dimulai</p>
     </div>
@@ -634,7 +647,7 @@
           <div class="big">09</div>
           <div class="eyebrow">bulan bersama</div>
           <p>Sembilan bulan cerita, tawa, belajar memahami, dan kenangan yang pengin aku simpan baik-baik.</p>
-          <button class="btn light small" onclick="lilyPetals(25)">Taburkan bunga lily 🤍</button>
+          <button class="btn light small" onclick="lilyPetals(25)">Taburkan bunga lily 🌸</button>
         </div>
         <article class="card">
           <div class="feature-icon">🫶🏻</div>
@@ -661,7 +674,7 @@
           <div class="time-box"><strong id="minutes">00</strong><span>menit</span></div>
           <div class="time-box"><strong id="seconds">00</strong><span>detik</span></div>
         </div>
-        <p style="color:var(--muted)">dan hitungannya terus berjalan… semoga dipenuhi hal-hal baik, ya, Sayang. ♡</p>
+        <p style="color:var(--muted)">dan hitungannya terus berjalan… semoga dipenuhi hal-hal baik, ya, Sayang. 🌸</p>
       </div>
     </div>
   </section>
@@ -731,7 +744,7 @@
           <div class="dot"></div>
           <article class="card">
             <small>bab 05 · hari ini</small>
-            <h3>Sembilan bulan dan masih banyak cerita ♡</h3>
+            <h3>Sembilan bulan dan masih banyak cerita 🌸</h3>
             <p>Terima kasih untuk semua momen yang sudah kita lewati. Semoga kita terus belajar memahami satu sama lain dan membuat kenangan baru.</p>
           </article>
         </div>
@@ -745,12 +758,12 @@
       <div class="heading">
         <div class="eyebrow">our little soundtrack</div>
         <h2>Satu lagu untuk kita 🎧</h2>
-        <p>Klik piringan hitam atau tombol untuk memutar lagu ♡</p>
+        <p>Klik piringan hitam atau tombol untuk memutar lagu 🌸</p>
       </div>
 
       <div class="card music">
         <div class="vinyl" id="vinyl" title="Klik untuk memutar/menghentikan lagu">
-          <div class="vinyl-center">🤍</div>
+          <div class="vinyl-center">🌸</div>
         </div>
 
         <div class="music-info">
@@ -770,7 +783,7 @@
           </div>
 
           <p id="musicStatus" class="music-status" aria-live="polite">
-            ♡ Klik di mana saja untuk mulai mendengarkan...
+            🌸 Klik di mana saja untuk mulai mendengarkan...
           </p>
 
           <audio id="ourMusic" preload="auto">
@@ -790,7 +803,7 @@
         <div class="eyebrow">a letter from my heart</div>
         <h2>Surat kecil untuk Bebe</h2>
         <p>Ada sesuatu yang pengin aku sampaikan, dari hati aku sendiri.</p>
-        <button class="btn" id="openLetter">Buka suratnya 🤍</button>
+        <button class="btn" id="openLetter">Buka suratnya 🌸</button>
         <div class="letter-body" id="letterBody">
           Untuk Sayangku, Vindi ♡
 
@@ -804,7 +817,7 @@
 
           Terima kasih sudah menjadi bagian dari sembilan bulan ini. Aku berharap kita bisa terus saling mengenal, belajar memahami, dan menghargai satu sama lain. Semoga masih banyak tempat yang kita datangi, makanan yang kita coba, cerita random yang kita bahas, dan momen sederhana yang nanti jadi kenangan berharga.
 
-          Happy anniversary, Sayang. Semoga kamu selalu merasa disayang dan dihargai. Aku sayang kamu, Bebe. 🤍
+          Happy anniversary, Sayang. Semoga kamu selalu merasa disayang dan dihargai. Aku sayang kamu, Bebe. 🌸
 
           <div class="signature">dari Rayyan, untuk Vindi ♡</div>
         </div>
@@ -815,7 +828,7 @@
   <!-- Section Final -->
   <section class="final">
     <div class="eyebrow">one last little surprise</div>
-    <h2>Hei, Bebe…<br><em style="color:var(--rose)">kamu spesial.</em> ♡</h2>
+    <h2>Hei, Bebe…<br><em style="color:var(--rose)">kamu spesial.</em> 🌸</h2>
     <p>Terima kasih sudah ikut menulis cerita ini bersamaku.</p>
     <button class="btn" id="surprise">Tekan untuk kejutan terakhir ✨</button>
     <p id="surpriseText" style="font-weight:700; color:var(--rose-dark); min-height:28px; margin-top:18px;"></p>
@@ -841,18 +854,18 @@
     document.getElementById('openLetter').addEventListener('click', function () {
       const body = document.getElementById('letterBody');
       body.classList.toggle('open');
-      this.textContent = body.classList.contains('open') ? 'Tutup suratnya 🤍' : 'Buka suratnya 🤍';
+      this.textContent = body.classList.contains('open') ? 'Tutup suratnya 🌸' : 'Buka suratnya 🌸';
       if (body.classList.contains('open')) lilyPetals(12);
     });
 
     // Kejutan Terakhir
     document.getElementById('surprise').addEventListener('click', function () {
       lilyPetals(35);
-      document.getElementById('surpriseText').textContent = 'Kalau bisa mengulang first date kita, aku tetap akan memilih kamu. Sayang kamu, Bebe! 🤍';
-      this.textContent = 'Kejutan terkirim ke hatimu 🌸';
+      document.getElementById('surpriseText').textContent = 'Kalau bisa mengulang first date kita, aku tetap akan memilih kamu. Sayang kamu, Bebe! 🌸';
+      this.textContent = 'Kejutan terkirim ke hatimu 🤍';
     });
 
-    // Efek Animasi Bunga Lily & Hati Berjatuhan
+    // Efek Animasi Bunga Lily Berjatuhan
     function lilyPetals(n) {
       const symbols = ['🌸', '🤍', '💮', '✨', '🌷'];
       for (let i = 0; i < n; i++) {
@@ -880,7 +893,7 @@
         vinyl.classList.add('playing');
         musicIcon.textContent = '❚❚';
         musicLabel.textContent = 'Jeda lagu';
-        musicStatus.textContent = '🎵 Sedang memutar: Daniel Caesar - Who Knows ♡';
+        musicStatus.textContent = '🎵 Sedang memutar: Daniel Caesar - Who Knows 🌸';
       }).catch(err => {
         console.log("Audio play prevented:", err);
       });
@@ -916,7 +929,7 @@
       vinyl.classList.remove('playing');
       musicIcon.textContent = '▶';
       musicLabel.textContent = 'Putar lagu kita';
-      musicStatus.textContent = '♡ Lagu selesai diputar.';
+      musicStatus.textContent = '🌸 Lagu selesai diputar.';
     });
   </script>
 </body>
